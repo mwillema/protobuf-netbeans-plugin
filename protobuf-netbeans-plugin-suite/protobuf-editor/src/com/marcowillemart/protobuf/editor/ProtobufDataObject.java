@@ -1,4 +1,4 @@
-package com.marcowillemart.netbeans.protobuf;
+package com.marcowillemart.protobuf.editor;
 
 import java.io.IOException;
 import org.netbeans.core.spi.multiview.MultiViewElement;
@@ -26,7 +26,7 @@ import org.openide.windows.TopComponent;
 )
 @DataObject.Registration(
         mimeType = "application/x-protobuf",
-        iconBase = "com/marcowillemart/netbeans/protobuf/google-dev.png",
+        iconBase = "com/marcowillemart/protobuf/editor/google-dev.png",
         displayName = "#LBL_Protobuf_LOADER",
         position = 300
 )
@@ -97,7 +97,7 @@ public class ProtobufDataObject extends MultiDataObject {
 
     @MultiViewElement.Registration(
             displayName = "#LBL_Protobuf_EDITOR",
-            iconBase = "com/marcowillemart/netbeans/protobuf/google-dev.png",
+            iconBase = "com/marcowillemart/protobuf/editor/google-dev.png",
             mimeType = "application/x-protobuf",
             persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
             preferredID = "Protobuf",
