@@ -1,4 +1,4 @@
-package com.marcowillemart.netbeans.protobuf;
+package com.marcowillemart.protobuf.editor;
 
 import javax.swing.Action;
 import javax.swing.JComponent;
@@ -14,7 +14,7 @@ import org.openide.windows.TopComponent;
 
 @MultiViewElement.Registration(
         displayName = "#LBL_Protobuf_VISUAL",
-        iconBase = "com/marcowillemart/netbeans/protobuf/google-dev.png",
+        iconBase = "com/marcowillemart/protobuf/editor/google-dev.png",
         mimeType = "application/x-protobuf",
         persistenceType = TopComponent.PERSISTENCE_NEVER,
         preferredID = "ProtobufVisual",
