@@ -13,8 +13,6 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
 /**
  * ProtobufEditorLexer represents a mutable lexer for the Protobuf editor.
  *
- * @see http://bits.netbeans.org/8.0.2/javadoc/org-netbeans-modules-lexer/org/netbeans/spi/lexer/Lexer.html
- *
  * @author mwi
  */
 final class ProtobufEditorLexer implements Lexer<ProtobufTokenId> {
@@ -39,7 +37,7 @@ final class ProtobufEditorLexer implements Lexer<ProtobufTokenId> {
         this.lexer =
                 new ProtobufLexer(
                         new AntlrCharStream(info.input(), SOURCE_NAME));
-        this.lexer.setChannel(1);
+        this.lexer.setChannel(ProtobufLexer.HIDDEN);
 
         AntlrLexerState state = (AntlrLexerState) info.state();
 

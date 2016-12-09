@@ -92,6 +92,7 @@ public enum ProtobufTokenIdSet {
         initLiteralTokenIds();
         initSeparatorTokenIds();
         initOperatorTokenIds();
+        addTokenId(ProtobufLexer.ANYCHAR, "error");
     }
 
     /**
@@ -102,6 +103,7 @@ public enum ProtobufTokenIdSet {
         final String whitespace = "whitespace";
 
         addTokenId(ProtobufLexer.WS, whitespace);
+        addTokenId(ProtobufLexer.NEWLINE, whitespace);
     }
 
     /**
@@ -111,7 +113,7 @@ public enum ProtobufTokenIdSet {
     private void initCommentTokenIds() {
         final String comment = "comment";
 
-        addTokenId(ProtobufLexer.COMMENT, comment);
+        addTokenId(ProtobufLexer.BLOCK_COMMENT, comment);
         addTokenId(ProtobufLexer.LINE_COMMENT, comment);
     }
 
@@ -153,8 +155,6 @@ public enum ProtobufTokenIdSet {
         addTokenId(ProtobufLexer.ONEOF, keyword);
         addTokenId(ProtobufLexer.OPTION, keyword);
         addTokenId(ProtobufLexer.PACKAGE, keyword);
-        addTokenId(ProtobufLexer.PROTO3_DOUBLE, keyword);
-        addTokenId(ProtobufLexer.PROTO3_SINGLE, keyword);
         addTokenId(ProtobufLexer.PUBLIC, keyword);
         addTokenId(ProtobufLexer.REPEATED, keyword);
         addTokenId(ProtobufLexer.RESERVED, keyword);
@@ -194,7 +194,10 @@ public enum ProtobufTokenIdSet {
         final String str = "string";
 
         addTokenId(ProtobufLexer.StrLit, str);
+        addTokenId(ProtobufLexer.UnterminatedStrLit, str);
         addTokenId(ProtobufLexer.Quote, str);
+        addTokenId(ProtobufLexer.PROTO3_DOUBLE, str);
+        addTokenId(ProtobufLexer.PROTO3_SINGLE, str);
     }
 
     /**

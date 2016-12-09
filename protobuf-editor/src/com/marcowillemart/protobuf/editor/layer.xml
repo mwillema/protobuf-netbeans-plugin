@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<!DOCTYPE filesystem PUBLIC
+    "-//NetBeans//DTD Filesystem 1.2//EN"
+    "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
-
     <folder name="Editors">
         <folder name="application">
             <folder name="x-protobuf">
                 <attr name="SystemFileSystem.localizingBundle" stringvalue="com.marcowillemart.protobuf.editor.Bundle"/>
+
                 <folder name="FontsColors">
                     <folder name="NetBeans">
                         <folder name="Defaults">
@@ -15,9 +17,14 @@
                         </folder>
                     </folder>
                 </folder>
-                <file name="com-marcowillemart-protobuf-editor-parser-ParsingErrorHighlightingTaskFactory.instance">
-                    <attr name="instanceOf" stringvalue="org.netbeans.modules.parsing.spi.TaskFactory"/>
-                </file>
+
+                <!--<file name="AutoIndenter.instance">
+                    <attr name="instanceOf" stringvalue="org.netbeans.spi.editor.typinghooks.TypedTextInterceptor$Factory"/>
+                    <attr name="instanceCreate"
+                          methodvalue="org.netbeans.modules.editor.indent.spi.support.AutomatedIndenting.createHotCharsIndenter"/>
+                          <attr name="regex1" stringvalue="\s*\{"/>
+                          <attr name="regex2" stringvalue="\s*\}"/>
+                </file>-->
             </folder>
         </folder>
     </folder>

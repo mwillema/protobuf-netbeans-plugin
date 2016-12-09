@@ -5,7 +5,8 @@
     <fontcolor name="comment" foreColor="969696" />
     <fontcolor name="identifier" foreColor="black" />
     <fontcolor name="keyword" foreColor="0000E6" />
-    <fontcolor name="type" foreColor="black" />
+    <fontcolor name="boolean" foreColor="0000E6" />
+    <fontcolor name="type" foreColor="0000E6" />
     <fontcolor name="number" foreColor="red" />
     <fontcolor name="method-declaration" default="method">
         <font style="bold" />
