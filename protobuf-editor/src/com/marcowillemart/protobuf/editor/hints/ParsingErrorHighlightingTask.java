@@ -1,4 +1,4 @@
-package com.marcowillemart.protobuf.editor.parser;
+package com.marcowillemart.protobuf.editor.hints;
 
 import com.marcowillemart.common.lang.ParsingError;
 import com.marcowillemart.common.util.Assert;
@@ -20,14 +20,14 @@ import org.netbeans.spi.editor.hints.Severity;
  *
  * @author mwi
  */
-public final class ParsingErrorHighlightingTask
+final class ParsingErrorHighlightingTask
       extends ParserResultTask<ProtobufEditorParserResult> {
 
     private static final String LAYER_ID = "protobuf";
     private static final int PRIORITY = 100;
 
     /**
-     * @effects Makes this be a new SyntaxErrorHighlightingTask.
+     * @effects Makes this be a new task.
      */
     ParsingErrorHighlightingTask() {
     }

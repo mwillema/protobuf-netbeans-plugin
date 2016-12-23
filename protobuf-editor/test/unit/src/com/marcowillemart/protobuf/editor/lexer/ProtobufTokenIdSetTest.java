@@ -22,8 +22,8 @@ public class ProtobufTokenIdSetTest {
 
     @Test
     public void testGet() {
-        // Exercise && Verify
-        for (int i = 1; i < ProtobufLexer.VOCABULARY.getMaxTokenType(); i++) {
+        // Exercise & Verify
+        for (int i = 1; i <= ProtobufLexer.VOCABULARY.getMaxTokenType(); i++) {
             TokenId actual = target.get(i);
             assertNotNull(
                     "TokenId with ordinal = " + i + " must not be null",
