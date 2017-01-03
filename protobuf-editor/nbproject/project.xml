@@ -7,19 +7,11 @@
             <suite-component/>
             <module-dependencies>
                 <dependency>
-                    <code-name-base>com.marcowillemart.protobuf</code-name-base>
+                    <code-name-base>org.netbeans.api.templates</code-name-base>
                     <build-prerequisite/>
                     <compile-dependency/>
                     <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.antlr</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
+                        <specification-version>1.6.1</specification-version>
                     </run-dependency>
                 </dependency>
                 <dependency>
@@ -167,14 +159,6 @@
                         <specification-version>6.71.1</specification-version>
                     </run-dependency>
                 </dependency>
-                <dependency>
-                    <code-name-base>org.slf4j</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
             </module-dependencies>
             <test-dependencies>
                 <test-type>
@@ -191,6 +175,18 @@
                 </test-type>
             </test-dependencies>
             <public-packages/>
+            <class-path-extension>
+                <runtime-relative-path>ext/antlr-runtime-4.5.3.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/antlr-runtime-4.5.3.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/slf4j-api-1.7.21.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/slf4j-api-1.7.21.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/slf4j-jdk14-1.7.21.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/slf4j-jdk14-1.7.21.jar</binary-origin>
+            </class-path-extension>
         </data>
     </configuration>
 </project>

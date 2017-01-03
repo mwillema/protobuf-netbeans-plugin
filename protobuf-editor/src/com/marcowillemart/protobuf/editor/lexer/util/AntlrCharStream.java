@@ -3,7 +3,6 @@ package com.marcowillemart.protobuf.editor.lexer.util;
 import com.marcowillemart.common.util.Assert;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.IntStream;
 import org.antlr.v4.runtime.misc.Interval;
@@ -18,9 +17,6 @@ import org.netbeans.spi.lexer.LexerInput;
  * @author mwi
  */
 public final class AntlrCharStream implements CharStream {
-
-    private static final Logger LOG =
-            Logger.getLogger(AntlrCharStream.class.getName());
 
     private final LexerInput input;
     private final String name;

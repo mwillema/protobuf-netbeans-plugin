@@ -391,12 +391,16 @@ StrLit
     |   '"' CharValue* '"'
     ;
 
+UnterminatedStrLit
+    :   ('\'' | '"') CharValue*
+    ;
+
 fragment
 CharValue
     :   HexEscape
     |   OctEscape
     |   CharEscape
-    |   ~[\0\n\\]
+    |   ~['"\0\n\\]
     ;
 
 fragment
@@ -456,15 +460,27 @@ PLUS            : '+';
 
 ASSIGN          : '=';
 
-// Whitespace and comments
+// Whitespaces
 
-WS  :   [ \t\r\n\f]+  -> skip
+WS  :   [ \t]+  -> channel(HIDDEN)
     ;
 
+NEWLINE
+    :   '\r'? '\n'  -> channel(HIDDEN)
+    ;
+
+// Comments
+
 BLOCK_COMMENT
-    :   '/*' .*? '*/'  -> channel(HIDDEN)
+    :   '/*' .*? ('*/' | EOF)  -> channel(HIDDEN)
     ;
 
 LINE_COMMENT
     :   '//' ~[\r\n]*  -> channel(HIDDEN)
+    ;
+
+// Illegal Characters
+
+ANYCHAR
+    :   .  -> channel(HIDDEN)
     ;

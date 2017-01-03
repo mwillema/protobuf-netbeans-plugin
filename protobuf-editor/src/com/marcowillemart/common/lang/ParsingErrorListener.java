@@ -4,12 +4,12 @@ import com.marcowillemart.common.util.Assert;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.Token;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ParsingErrorListener represents a mutable listener for the syntactic and
@@ -23,7 +23,7 @@ import org.antlr.v4.runtime.Token;
 public final class ParsingErrorListener extends BaseErrorListener {
 
     private static final Logger LOG =
-            Logger.getLogger(ParsingErrorListener.class.getName());
+            LoggerFactory.getLogger(ParsingErrorListener.class);
 
     private final List<ParsingError> errors;
 
@@ -94,6 +94,6 @@ public final class ParsingErrorListener extends BaseErrorListener {
         // Adds 1 because Antlr starts at col 0 instead of col 1
         errors.add(new ParsingError(message, line, charPositionInLine + 1));
 
-        LOG.log(Level.INFO, errors.get(errors.size() - 1).toString());
+        LOG.debug(errors.get(errors.size() - 1).toString());
     }
 }

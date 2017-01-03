@@ -4,6 +4,7 @@
 *~
 **/nbproject/private/
 **/build/
+**/src/**/protobuf/parser
 
 # virtual machine crash logs
 # see http://www.java.com/en/download/help/error_hotspot.xml

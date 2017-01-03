@@ -5,4 +5,15 @@
 <project name="com.marcowillemart.protobuf.editor" default="netbeans" basedir=".">
     <description>Builds, tests, and runs the project com.marcowillemart.protobuf.editor</description>
     <import file="nbproject/build-impl.xml"/>
+    <import file="nbproject/build-antlr-impl.xml"/>
+
+    <target name="clean" depends="projectized-common.clean">
+        <delete dir="src/com/marcowillemart/protobuf/parser" failonerror="false"/>
+    </target>
+
+    <target name="build-init" depends="harness.build-init">
+        <antcall target="-antlr-init"/>
+    </target>
+
+    <target name="compile" depends="antlr,projectized-common.compile"/>
 </project>

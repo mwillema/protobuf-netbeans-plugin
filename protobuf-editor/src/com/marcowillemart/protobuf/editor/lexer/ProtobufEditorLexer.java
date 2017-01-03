@@ -4,11 +4,11 @@ import com.marcowillemart.common.util.Assert;
 import com.marcowillemart.protobuf.editor.lexer.util.AntlrCharStream;
 import com.marcowillemart.protobuf.editor.lexer.util.AntlrLexerState;
 import com.marcowillemart.protobuf.parser.ProtobufLexer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.antlr.v4.runtime.Token;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ProtobufEditorLexer represents a mutable lexer for the Protobuf editor.
@@ -18,7 +18,7 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
 final class ProtobufEditorLexer implements Lexer<ProtobufTokenId> {
 
     private static final Logger LOG =
-            Logger.getLogger(ProtobufEditorLexer.class.getName());
+            LoggerFactory.getLogger(ProtobufEditorLexer.class);
 
     private static final String SOURCE_NAME = "ProtobufEditor";
 
@@ -58,16 +58,16 @@ final class ProtobufEditorLexer implements Lexer<ProtobufTokenId> {
 
         if (token.getType() != ProtobufLexer.EOF) {
             tokenId  = ProtobufTokenIdSet.INSTANCE.get(token.getType());
-            LOG.log(Level.INFO, "nextToken - {0}", tokenId.toString());
+            LOG.debug("nextToken - {}", tokenId.toString());
         }  else if (info.input().readLength() > 0) {
             // Remaining chars on the input should be tokenized
             // see https://netbeans.org/bugzilla/show_bug.cgi?id=240826
             tokenId = ProtobufTokenIdSet.INSTANCE.get(ProtobufLexer.WS);
-            LOG.log(Level.INFO, "nextToken - ERROR (as WS)");
+            LOG.debug("nextToken - ERROR (as WS)");
         }
 
         if (tokenId == null) {
-            LOG.log(Level.INFO, "nextToken - EOF");
+            LOG.debug("nextToken - EOF");
             return null;
         }
 
