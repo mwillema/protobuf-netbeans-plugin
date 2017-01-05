@@ -3,4 +3,4 @@ AutoUpdate-Show-In-Client: true
 OpenIDE-Module: com.marcowillemart.protobuf.editor
 OpenIDE-Module-Layer: com/marcowillemart/protobuf/editor/layer.xml
 OpenIDE-Module-Localizing-Bundle: com/marcowillemart/protobuf/editor/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.0
+OpenIDE-Module-Specification-Version: 1.0.0

@@ -58,7 +58,7 @@ public final class Assert {
         if (value1 != value2) {
             throw new FailureException(
                     String.format(
-                            "equals assertion broken at %s",
+                            "equals assertion %s = %s broken at %s",
                             value1,
                             value2,
                             StackTraces.callingMethod()));
