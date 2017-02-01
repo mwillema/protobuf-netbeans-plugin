@@ -37,7 +37,7 @@ public final class ProtobufTypedBreakInterceptor
     public void insert(MutableContext context) throws BadLocationException {
         Document document = documentFrom(context);
 
-        addExtraLineBetweenBraces(context);
+        addExtraLineBetweenBraces(context, document);
         closeBlockComment(context, document);
         addLineToBlockComment(context, document);
     }
@@ -55,19 +55,24 @@ public final class ProtobufTypedBreakInterceptor
     ////////////////////
 
     /**
-     * @requires context != null
+     * @requires context != null && document != null
      * @modifies context
      * @effects Adds an extra line if the line break is typed between two
      *          matching braces.
      */
-    private static void addExtraLineBetweenBraces(MutableContext context) {
+    private static void addExtraLineBetweenBraces(
+            MutableContext context,
+            Document document) {
+
         int offset = context.getBreakInsertOffset();
 
         if (0 < offset && offset < context.getDocument().getLength()) {
             String surroundingchars = surroundingCharacters(context, offset);
 
             if (PAIR_OF_CURLY_BRACES.equals(surroundingchars)) {
-                context.setText("\n\n", 1, 1);
+                String indentation = document.lineAt(offset).indentation();
+
+                context.setText(String.format("\n\n%s", indentation), 1, 1);
             }
         }
     }
