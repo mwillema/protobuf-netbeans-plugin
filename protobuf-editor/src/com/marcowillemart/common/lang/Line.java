@@ -39,6 +39,12 @@ public interface Line {
     String text();
 
     /**
+     * @return the indentation of this, i.e., the whitespaces in this.text
+     *         before the first non-white character.
+     */
+    String indentation();
+
+    /**
      * @return true iff the last non-white character of this.text is a '{'
      */
     boolean isLastOpeningBrace();

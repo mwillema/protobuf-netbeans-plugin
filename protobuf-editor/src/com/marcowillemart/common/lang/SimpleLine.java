@@ -60,6 +60,19 @@ public final class SimpleLine extends AbstractLine {
     }
 
     @Override
+    public String indentation() {
+        int i;
+
+        for (i = 0; i < text.length(); i++) {
+            if (!Character.isWhitespace(text.charAt(i))) {
+                break;
+            }
+        }
+
+        return text.substring(0, i);
+    }
+
+    @Override
     public boolean isLastOpeningBrace() {
         for (int i = text.length() - 1; i >= 0; i--) {
             char ch = text.charAt(i);
